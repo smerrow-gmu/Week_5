@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
 
-@Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
-})
 
-export class AppComponent {
-  title: String = 'Nvidia GTX 10 Series';
-  cards = CARDS;
-}
 
 export class Card {
   id: number;
   name: string;
+
+  constructor() {
+    this.id = 0;
+    this.name = 'default';
+  }
 }
 
 const CARDS: Card[] = [
@@ -27,3 +23,13 @@ const CARDS: Card[] = [
   {id: 8, name: 'GTX 1080 Ti'}
 ];
 
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  title: String = 'Nvidia GTX 10 Series';
+  cards = CARDS;
+}
