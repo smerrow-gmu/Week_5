@@ -1,6 +1,13 @@
 <section>
 	<header>
-		<h1>Nvidia 10 Series Graphics Cards</h1>
+		<h1>nvidia 10 series Graphics Cards</h1>
 		<p class="description">All Nvidia 10 series cards</p>
+    <h1>title</h1>
+    <h2>details</h2>
+    <ul class="cards">
+      <li *ngFor="let card of cards">
+        <span class="badge">{{card.id}}</span> {{card.name}}
+      </li>
+    </ul>
 	</header>
 </section>
