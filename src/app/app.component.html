@@ -1,13 +1,17 @@
 <section>
 	<header>
-		<h1>nvidia 10 series Graphics Cards</h1>
-		<p class="description">All Nvidia 10 series cards</p>
-    <h1>title</h1>
-    <h2>details</h2>
+		<h1>Nvidia 10 Series Graphics Cards</h1>
+		<p class="description">All Nvidia 10 Series Cards<br>Click on a card to view more details!</p>
     <ul class="cards">
-      <li *ngFor="let card of cards">
-        <span class="badge">{{card.id}}</span> {{card.name}}
+      <li *ngFor="let card of cards"
+        [class.selected]="card === selectedCard"
+        (click)="onSelect(card)">
+	<span class="badge"><b>{{card.id}}.</b></span> {{card.name}}
       </li>
     </ul>
+    <div *ngIf="selectedCard">
+	<h2>{{selectedCard.name}} details</h2>
+	<div><label><b>Description:</b></label><br>{{selectedCard.description}}</div>
+    </div>
 	</header>
 </section>
